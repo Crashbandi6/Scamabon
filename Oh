@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scamabon™ — The Online Superstore</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fff5cf;
+  color: #252015;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background: #e73518;
+  color: white;
+  padding: 25px 15px;
+  text-align: center;
+  border-bottom: 6px solid #ffc928;
+}
+
+.logo {
+  font-size: clamp(38px, 8vw, 72px);
+  font-weight: 1000;
+  letter-spacing: -3px;
+  text-shadow: 4px 4px #772010;
+  margin: 0;
+}
+
+header p {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.shipping {
+  background: #242015;
+  color: #ffe65b;
+  padding: 11px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+nav {
+  background: #ffca32;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: #252015;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 14px;
+}
+
+nav a:hover { text-decoration: underline; }
+
+main {
+  max-width: 1100px;
+  padding: 20px;
+  margin: auto;
+}
+
+.hero {
+  background: #ff4e91;
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+  border: 4px solid #252015;
+  box-shadow: 6px 6px #252015;
+}
+
+.hero h2 {
+  font-size: clamp(27px, 5vw, 44px);
+  margin: 0 0 10px;
+}
+
+.hero p { margin-bottom: 0; }
+
+.notice {
+  margin-top: 18px;
+  padding: 12px;
+  background: #fff;
+  border: 2px dashed #e73518;
+  text-align: center;
+  font-size: 13px;
+}
+
+.section-heading {
+  margin-top: 35px;
+  border-bottom: 4px solid #252015;
+  padding-bottom: 10px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  background: white;
+  border: 2px solid #252015;
+  box-shadow: 4px 4px #252015;
+  padding: 12px;
+  position: relative;
+}
+
+.product-art {
+  background: #f4e9d4;
+  min-height: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 82px;
+  border: 1px solid #ddd0b7;
+}
+
+.tag {
+  display: inline-block;
+  background: #e73518;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 6px 8px;
+  margin-top: 12px;
+}
+
+.product h3 {
+  margin: 10px 0 5px;
+  font-size: 19px;
+}
+
+.description {
+  color: #655e50;
+  font-size: 13px;
+  line-height: 1.5;
+  min-height: 40px;
+}
+
+.old-price {
+  color: #888;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+.price {
+  color: #d52b16;
+  font-size: 25px;
+  font-weight: 900;
+  margin-top: 4px;
+}
+
+.rating {
+  color: #a56b00;
+  font-size: 13px;
+}
+
+.category {
+  background: #e5ffd8;
+  border: 2px solid #252015;
+  padding: 18px;
+  margin-top: 30px;
+}
+
+footer {
+  background: #252015;
+  color: white;
+  text-align: center;
+  padding: 28px 15px;
+  margin-top: 40px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+footer a { color: #ffda46; }
+
+@media (max-width: 500px) {
+  nav a {
+    display: inline-block;
+    margin: 6px;
+  }
+
+  main { padding: 14px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1 class="logo">SCAMABON™</h1>
+  <p>Your favourite probably-legitimate online superstore.</p>
+</header>
+
+<div class="shipping">
+  ✦ QUESTIONABLE DEALS. QUESTIONABLE PRICES. QUESTIONABLE TASTE. ✦
+</div>
+
+<nav>
+  <a href="#home">HOME</a>
+  <a href="#popular">BEST SELLERS</a>
+  <a href="#gadgets">GADGETS</a>
+  <a href="#about">ABOUT US</a>
+</nav>
+
+<main id="home">
+
+  <section class="hero">
+    <h2>THE MEGA SALE EVENT!!!</h2>
+    <p>Massive discounts on products nobody asked for.</p>
+    <p><strong>UP TO 93% OFF*</strong></p>
+    <p style="font-size:11px">*Discount calculations performed by our imaginary finance department.</p>
+  </section>
+
+  <div class="notice">
+    📢 <strong>STORE NOTICE:</strong>
+    Our marketing department has been replaced by a calculator.
+  </div>
+
+  <h2 class="section-heading" id="popular">🔥 TODAY'S BEST SELLERS</h2>
+
+  <section class="products">
+
+    <article class="product">
+      <div class="product-art">📱</div>
+      <span class="tag">BEST SELLER</span>
+      <h3>Phone 99 Ultra</h3>
+      <div class="rating">★★☆☆☆ (2.1)</div>
+      <p class="description">A phone-shaped device with approximately phone-like ambitions.</p>
+      <div class="old-price">$899.99</div>
+      <div class="price">$39.99</div>
+    </article>
+
+    <article class="product">
+      <div class="product-art">📦</div>
+      <span class="tag">MYSTERY DEAL</span>
+      <h3>Surprise Box Deluxe</h3>
+      <div class="rating">★★★☆☆ (3.0)</div>
+      <p class="description">What's inside? That's between you and the box.</p>
+      <div class="old-price">$199.99</div>
+      <div class="price">$12.49</div>
+    </article>
+
+    <article class="product">
+      <div class="product-art">⌚</div>
+      <span class="tag">LIMITED OFFER</span>
+      <h3>TimeWatch Pro Max</h3>
+      <div class="rating">★★☆☆☆ (1.8)</div>
+      <p class="description">Shows the time. Sometimes. Depending on the time.</p>
+      <div class="old-price">$349.99</div>
+      <div class="price">$17.95</div>
+    </article>
+
+    <article class="product">
+      <div class="product-art">🎧</div>
+      <span class="tag">HOT DEAL</span>
+      <h3>SuperBass Headphones</h3>
+      <div class="rating">★★★☆☆ (2.7)</div>
+      <p class="description">Experience sound in a completely sound-related way.</p>
+      <div class="old-price">$159.99</div>
+      <div class="price">$8.99</div>
+    </article>
+
+  </section>
+
+  <section class="category" id="gadgets">
+    <h2>💻 THE GADGET DEPARTMENT</h2>
+    <p>Welcome to our highly questionable technology section.</p>
+    <p>Our fictional engineers work tirelessly in a fictional building to bring you fictional innovation.</p>
+  </section>
+
+  <h2 class="section-heading">✨ MORE INCREDIBLE OFFERS</h2>
+
+  <section class="products">
+
+    <article class="product">
+      <div class="product-art">🕶️</div>
+      <span class="tag">NEW ARRIVAL</span>
+      <h3>Invisible Sunglasses</h3>
+      <div class="rating">★★★★★ (5.0*)</div>
+      <p class="description">You can't see them. That's the entire selling point.</p>
+      <div class="old-price">$79.99</div>
+      <div class="price">$5.00</div>
+    </article>
+
+    <article class="product">
+      <div class="product-art">🔋</div>
+      <span class="tag">SUPER SAVINGS</span>
+      <h3>Infinite Battery™</h3>
+      <div class="rating">★☆☆☆☆ (1.0)</div>
+      <p class="description">Infinite possibilities. Battery performance not guaranteed.</p>
+      <div class="old-price">$499.99</div>
+      <div class="price">$21.00</div>
+    </article>
+
+    <article class="product">
+      <div class="product-art">🧴</div>
+      <span class="tag">CUSTOMER FAVOURITE</span>
+      <h3>Premium Air Jar</h3>
+      <div class="rating">★★★★☆ (4.2*)</div>
+      <p class="description">A premium jar of locally sourced, completely ordinary air.</p>
+      <div class="old-price">$49.99</div>
+      <div class="price">$3.99</div>
+    </article>
+
+    <article class="product">
+      <div class="product-art">🪨</div>
+      <span class="tag">EXCLUSIVE</span>
+      <h3>Luxury Desk Rock</h3>
+      <div class="rating">★★★☆☆ (3.5*)</div>
+      <p class="description">A rock. For your desk. Marketed as a lifestyle choice.</p>
+      <div class="old-price">$99.99</div>
+      <div class="price">$14.99</div>
+    </article>
+
+  </section>
+
+  <section class="category" id="about">
+    <h2>🏢 ABOUT SCAMABON</h2>
+    <p>Scamabon is a fictional online superstore created for entertainment. We believe every product deserves a suspiciously dramatic product description.</p>
+    <p><strong>Our motto:</strong> Why pay full price when you can question the price instead?</p>
+  </section>
+
+</main>
+
+<footer>
+  <h2>SCAMABON™</h2>
+  <p>Shopping has never looked this questionable.</p>
+  <p>© 2026 Scamabon Fictional Store. All products and reviews are fictional.</p>
+  <p>This is a fictional storefront. No products are sold and no transactions are processed.</p>
+</footer>
+
+</body>
+</html>
