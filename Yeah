@@ -1,0 +1,688 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10131b">
+  <title>Scamabon — Your Luck Just Changed</title>
+  <meta name="description" content="Scamabon: exclusive fictional opportunities from the world of the show.">
+  <style>
+    :root {
+      --bg: #10131b;
+      --panel: #191e29;
+      --lime: #c4ff52;
+      --orange: #ff8c42;
+      --text: #f5f6fa;
+      --muted: #a5adbd;
+      --border: #303747;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    button, a { font: inherit; }
+
+    a { color: inherit; text-decoration: none; }
+
+    .demo-banner {
+      background: var(--lime);
+      color: #10131b;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+    }
+
+    header {
+      max-width: 1160px;
+      margin: auto;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 1000;
+      letter-spacing: -1.5px;
+    }
+
+    .logo span { color: var(--lime); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    nav a:hover { color: var(--lime); }
+
+    .nav-cta {
+      color: var(--lime);
+      border: 1px solid var(--lime);
+      border-radius: 8px;
+      padding: 9px 14px;
+    }
+
+    main {
+      max-width: 1160px;
+      margin: auto;
+      padding: 30px 24px 80px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 75px 65px;
+      background:
+        radial-gradient(ellipse at 85% 20%, #c4ff521c, transparent 35%),
+        radial-gradient(ellipse at 10% 100%, #ff8c4212, transparent 40%),
+        var(--panel);
+    }
+
+    .hero::after {
+      content: "S";
+      position: absolute;
+      right: 6%;
+      top: 4%;
+      font-size: clamp(180px, 30vw, 360px);
+      line-height: 1;
+      font-weight: 1000;
+      color: #c4ff5209;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--lime);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--lime);
+      box-shadow: 0 0 12px var(--lime);
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 24px 0 16px;
+      font-size: clamp(46px, 8vw, 88px);
+      letter-spacing: -5px;
+      line-height: 0.99;
+    }
+
+    h1 span { color: var(--lime); }
+
+    .hero-copy {
+      max-width: 540px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 49px;
+      border: 0;
+      border-radius: 9px;
+      padding: 13px 22px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform .18s, filter .18s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .btn-primary {
+      color: #10131b;
+      background: var(--lime);
+      box-shadow: 0 7px 28px #c4ff5220;
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: #ffffff09;
+      border: 1px solid var(--border);
+    }
+
+    .fine-print {
+      margin-top: 17px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 22px 0 75px;
+    }
+
+    .stat {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #ffffff04;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 25px;
+      color: var(--lime);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section { scroll-margin-top: 20px; }
+
+    .section-heading { margin-bottom: 25px; }
+
+    .section-heading h2 {
+      margin: 8px 0;
+      font-size: clamp(30px, 5vw, 45px);
+      letter-spacing: -1.5px;
+    }
+
+    .section-heading p {
+      max-width: 600px;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .card-icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      background: #c4ff5216;
+      font-size: 23px;
+    }
+
+    .card h3 { margin: 0 0 8px; }
+
+    .card p {
+      flex: 1;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card button {
+      margin-top: 15px;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: var(--lime);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+      margin-top: 80px;
+      padding: 35px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: linear-gradient(120deg, #ff8c4210, transparent);
+    }
+
+    .story h2 {
+      font-size: clamp(30px, 5vw, 45px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .story p { color: var(--muted); }
+
+    .warning-box {
+      padding: 25px;
+      border: 1px solid #ff8c4266;
+      border-radius: 13px;
+      background: #ff8c420c;
+    }
+
+    .warning-box strong { color: var(--orange); }
+
+    .warning-box p {
+      margin-bottom: 0;
+      font-size: 14px;
+    }
+
+    .faq { margin-top: 75px; }
+
+    details {
+      padding: 19px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    summary {
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    details p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 30px 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: #000b;
+    }
+
+    .modal.open { display: grid; }
+
+    .modal-box {
+      width: min(100%, 440px);
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: 0 25px 90px #0008;
+    }
+
+    .modal-box h2 { margin-top: 0; }
+
+    .modal-box p { color: var(--muted); }
+
+    .modal-box .btn { width: 100%; margin-top: 10px; }
+
+    .close {
+      float: right;
+      border: 0;
+      background: none;
+      color: var(--muted);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    #toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 20;
+      max-width: calc(100% - 40px);
+      padding: 15px 20px;
+      border: 1px solid var(--lime);
+      border-radius: 10px;
+      background: var(--panel);
+      box-shadow: 0 10px 40px #0006;
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: .25s;
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 720px) {
+      header { padding: 18px; }
+      nav { gap: 12px; font-size: 12px; }
+      nav a:not(.nav-cta) { display: none; }
+      main { padding: 15px 15px 55px; }
+      .hero { padding: 45px 24px; }
+      h1 { letter-spacing: -2.5px; }
+      .hero-copy { font-size: 16px; }
+      .stats { gap: 8px; margin-bottom: 55px; }
+      .stat { padding: 14px 10px; }
+      .stat strong { font-size: 19px; }
+      .stat span { font-size: 11px; }
+      .cards { grid-template-columns: 1fr; }
+      .story { grid-template-columns: 1fr; padding: 23px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-banner">
+    FICTIONAL WEBSITE PROP · SCAMABON UNIVERSE
+  </div>
+
+  <header>
+    <a class="logo" href="#" aria-label="Scamabon home">
+      SCAMA<span>BON</span><sup>®</sup>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#offers">Opportunities</a>
+      <a href="#story">Our story</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#offers">Explore offers ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="dot"></span> An opportunity awaits</div>
+
+      <h1>Your luck<br>just <span>changed.</span></h1>
+
+      <p class="hero-copy">
+        Welcome to Scamabon. The home of extraordinary opportunities,
+        unbelievable rewards, and decisions you'll definitely remember.
+      </p>
+
+      <div class="actions">
+        <button class="btn btn-primary" data-offer="main">
+          CLAIM YOUR BONUS ↗
+        </button>
+        <a class="btn btn-secondary" href="#offers">
+          See opportunities ↓
+        </a>
+      </div>
+
+      <p class="fine-print">
+        A fictional website for a show. No real rewards, payments,
+        accounts, or personal information.
+      </p>
+    </section>
+
+    <div class="stats" aria-label="Fictional site statistics">
+      <div class="stat">
+        <strong>01</strong>
+        <span>Very mysterious offer</span>
+      </div>
+      <div class="stat">
+        <strong>100%</strong>
+        <span>Suspiciously confident</span>
+      </div>
+      <div class="stat">
+        <strong>???</strong>
+        <span>Terms you should read</span>
+      </div>
+    </div>
+
+    <section id="offers">
+      <div class="section-heading">
+        <div class="eyebrow">The fine print is somewhere</div>
+        <h2>Big promises. Bigger mysteries.</h2>
+        <p>
+          Choose an opportunity and discover what happens next.
+          Every offer is part of the fictional Scamabon storyline.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">✦</div>
+          <h3>The Lucky Bonus</h3>
+          <p>
+            You've supposedly been selected for an exclusive
+            fictional reward. How convenient.
+          </p>
+          <button data-offer="bonus">Investigate offer →</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">◈</div>
+          <h3>The Golden Opportunity</h3>
+          <p>
+            A once-in-a-lifetime opportunity that sounds
+            almost too good to be true.
+          </p>
+          <button data-offer="gold">Discover more →</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">⌁</div>
+          <h3>The Mystery Deal</h3>
+          <p>
+            Nobody knows exactly what this deal involves.
+            That's probably worth investigating.
+          </p>
+          <button data-offer="mystery">Open mystery →</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+      <div>
+        <div class="eyebrow">A perfectly ordinary company*</div>
+        <h2>Trust us.<br>What could go wrong?</h2>
+        <p>
+          Scamabon is a fictional company from the world of the show.
+          Its promises are part of the story, and its secrets are
+          yours to uncover.
+        </p>
+        <p style="font-size:12px">*Maybe don't trust us.</p>
+      </div>
+
+      <div class="warning-box">
+        <strong>⚠ A note from the writers</strong>
+        <p>
+          This is a fictional prop website. The offers, statistics,
+          company, and rewards are made up. Nothing on this page
+          creates a real account or awards a real prize.
+        </p>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="section-heading">
+        <div class="eyebrow">Questions? Of course you have questions.</div>
+        <h2>The not-so-fine FAQ.</h2>
+      </div>
+
+      <details>
+        <summary>Is Scamabon real?</summary>
+        <p>
+          No. This version is a fictional website prop created for
+          entertainment and storytelling.
+        </p>
+      </details>
+
+      <details>
+        <summary>Will I actually receive a bonus?</summary>
+        <p>
+          No real rewards are offered. The buttons trigger fictional
+          messages as part of the site's interactive story.
+        </p>
+      </details>
+
+      <details>
+        <summary>Why does this seem suspicious?</summary>
+        <p>
+          Excellent question. That may be an important clue in the show.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I learn more about the show?</summary>
+        <p>
+          Add your show's official social media or website links here
+          when you're ready.
+        </p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo">SCAMA<span>BON</span></div>
+    <p>A fictional website prop for entertainment.</p>
+    <p>© <span id="year"></span> Scamabon · All fictional rights reserved.</p>
+  </footer>
+
+  <div class="modal" id="modal" role="dialog"
+       aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button class="close" id="close" aria-label="Close dialog">×</button>
+      <div class="eyebrow">SCAMABON SYSTEM MESSAGE</div>
+      <h2 id="modal-title">Congratulations?</h2>
+      <p id="modal-message"></p>
+      <button class="btn btn-primary" id="continue">Continue the story →</button>
+    </div>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const messages = {
+      main: {
+        title: "You've been selected!",
+        message:
+          "The Scamabon system has identified you as a candidate for " +
+          "an extraordinary fictional opportunity. In this story, " +
+          "the next move is yours."
+      },
+      bonus: {
+        title: "The Lucky Bonus",
+        message:
+          "A suspiciously enthusiastic message appears: " +
+          "\"Your fictional bonus is waiting!\" No real prize is " +
+          "awarded. What happens next is up to the story."
+      },
+      gold: {
+        title: "A golden opportunity?",
+        message:
+          "The offer sounds incredible. Almost too incredible. " +
+          "You might want to read the fine print before trusting it."
+      },
+      mystery: {
+        title: "Something isn't adding up...",
+        message:
+          "You have discovered a new clue in the Scamabon storyline. " +
+          "The mystery continues, but no real information is needed."
+      }
+    };
+
+    const modal = document.getElementById("modal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalMessage = document.getElementById("modal-message");
+    const closeButton = document.getElementById("close");
+    const continueButton = document.getElementById("continue");
+    const toast = document.getElementById("toast");
+
+    let previousFocus = null;
+
+    function openOffer(name) {
+      const offer = messages[name] || messages.main;
+      previousFocus = document.activeElement;
+      modalTitle.textContent = offer.title;
+      modalMessage.textContent = offer.message;
+      modal.classList.add("open");
+      closeButton.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove("open");
+      if (previousFocus) previousFocus.focus();
+    }
+
+    document.querySelectorAll("[data-offer]").forEach(button => {
+      button.addEventListener("click", () => {
+        openOffer(button.dataset.offer);
+      });
+    });
+
+    closeButton.addEventListener("click", closeModal);
+    continueButton.addEventListener("click", () => {
+      closeModal();
+      showToast("STORY UPDATE: Something suspicious is happening...");
+    });
+
+    modal.addEventListener("click", event => {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && modal.classList.contains("open")) {
+        closeModal();
+      }
+    });
+
+    let toastTimeout;
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
